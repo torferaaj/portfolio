@@ -8,5 +8,14 @@ export default defineConfig({
   assetsInclude: ['**/*.pdf'],
   build: {
     assetsInlineLimit: 0,
+    outDir: 'dist',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+      }
+    }
   },
 })
